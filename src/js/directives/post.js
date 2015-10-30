@@ -4,6 +4,7 @@ angular.module('directings').directive('postDisplay', function(){
       post: '=',
       body: '='
     },
+    transclude: true,
     templateUrl: '/templates/post.html'
 
   };

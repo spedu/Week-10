@@ -1,6 +1,6 @@
 <div ng-if="post">
   <div>
-    <strong>{{ post.title }}</strong>
+    <strong ng-transclude></strong>
   </div>
   <tt>by {{ post.userName }}</tt>
   <div ng-if="body">

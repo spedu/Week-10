@@ -14,7 +14,7 @@
         <ul>
           <li ng-repeat="(index, post) in lc.posts.data">
             <a class="unlink" ng-click="lc.setPost(post.id)">
-              <post-display post="post"></post-display>
+              <post-display post="post">{{ post.title }}</post-display>
             </a>
           </li>
         </ul>
@@ -22,7 +22,7 @@
 
       <div class="well col-md-6" ng-controller="DisplayController as dc">
         <h2>DisplayController</h2>
-        <post-display post="dc.posts.current" body="true"></post-display>
+        <post-display post="dc.posts.current" body="true">{{ dc.posts.current.title }}</post-display>
       </div>
 
     </div>
