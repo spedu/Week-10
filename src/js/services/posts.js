@@ -2,15 +2,33 @@ angular.module('directings')
   .service('posts', ['$http', 'users', function($http, users){
     var svc = this;
     svc.data = [];
-    svc.get = function(callback){
-      $http.get('http://jsonplaceholder.typicode.com/posts')
+    //svc.current;
+    svc.get = function(index, callback){
+      index = index === undefined ? '' : index;
+      if(typeof index == 'Function'){
+        callback = index;
+        index = '';
+      }
+      $http.get('http://jsonplaceholder.typicode.com/posts/' + index)
         .then(function(response){
-          svc.data = response.data;
-          svc.mapUsers();
+          if(Array.isArray(response.data)){
+            svc.data = response.data;
+            svc.mapUsers();
+          } else {
+            svc.current = response.data;
+          }
           if(callback){
             callback();
           }
         });
+    };
+
+    svc.setCurrent = function(id){
+      svc.data.forEach(function(post){
+        if(post.id == id){
+          svc.current = post;
+        }
+      });
     };
 
     // this will add a userName to the svc.data object
@@ -23,7 +41,6 @@ angular.module('directings')
             }
           });
         });
-
       });
     };
 
