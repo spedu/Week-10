@@ -14,16 +14,15 @@
         <h2>ListController</h2>
         <ul>
           <li ng-repeat="(index, post) in lc.posts.data">
-            <a class="unlink" ng-click="lc.setPost(post.id)">
-              <post-display post="post">{{ post.title }}</post-display>
-            </a>
+            <strong>{{ post.title }}</strong><br>
+            <tt>by {{ post.userId }}</tt>
           </li>
         </ul>
       </div>
 
-      <div class="well col-md-6" ng-controller="DisplayController as dc">
+      <div class="well col-md-6">
         <h2>DisplayController</h2>
-        <post-display post="dc.posts.current" body="true">{{ dc.posts.current.title }}</post-display>
+
       </div>
 
     </div>
