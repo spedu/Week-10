@@ -5,7 +5,7 @@ angular.module('directings').directive('postDisplay', function(){
       body: '='
     },
     transclude: true,
-    templateUrl: '/templates/post.html'
+    templateUrl: 'templates/post.html'
 
   };
 });
