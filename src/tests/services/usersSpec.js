@@ -1,6 +1,6 @@
 describe('users service', function(){
   var users, $httpBackend;
-  var postsMock = [
+  var usersMock = [
     {title: "1", userName: "some1", body: "this is the body of 1"},
     {title: "2", userName: "some2", body: "this is the body of 2"},
     {title: "3", userName: "some2", body: "this is the body of 3"},
@@ -14,16 +14,20 @@ describe('users service', function(){
       users = $injector.get('users');
       $httpBackend
         .when('GET', 'http://jsonplaceholder.typicode.com/posts')
-        .respond(200, postsMock);
+        .respond(200, usersMock);
     });
   });
 
   describe('get', function(){
-    it("should get some posts", function(){
+    it("should get some users", function(){
       expect(users.data.length).toBe(0);
       users.get(function(){
-        expect(users.data.length).toBe(postsMock.length);
+        expect(users.data.length).toBe(usersMock.length);
       });
     });
   });
+
+
+
+
 });

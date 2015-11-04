@@ -1,9 +1,8 @@
 describe('blink directive', function(){
   var directiveEl, compile, scope;
-  var $httpBackend;
   beforeEach(function(){
-    module('templates', 'directings');
-    inject(function($compile, $rootScope){
+    module('directings');
+    inject(function($compile, $rootScope, $timeout){
       compile = $compile;
       scope = $rootScope.$new();
     });
@@ -14,6 +13,4 @@ describe('blink directive', function(){
 
   });
 
-  it("should have put the title in bold", function(){
-  });
 });

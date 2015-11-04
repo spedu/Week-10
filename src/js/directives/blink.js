@@ -19,7 +19,6 @@ angular.module('directings').directive('blink', ['$timeout', function($timeout){
 
   return {
     link: function(scope, element, attrs){
-
       showElement(element);
     }
   };
