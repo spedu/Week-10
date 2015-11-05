@@ -17,6 +17,7 @@
 2. Give it a `get` method that uses `$http`
 3. Put the `response.data` into a "data" variable on the service
 4. *Make sure it has a callback*
+**Test these now**
 
 ## Map the usernames to the posts
 *together*
@@ -63,6 +64,31 @@ return {
     title: '=title'
   },
   template: ...
+```
+
+## Test the directive
+*together*
+
+1. Initialize the current module
+  * `module('directings');`
+2. Inject in the `$compile` and `$rootScope` services
+  * `inject(function($compile, $rootScope){...`
+3. Attach `$compile` to a variable we can use outside of the `inject` scope
+4. Create a new localized scope from `$rootScope` and attach it to a variable outside the `inject` scope
+  * `scope = $rootScope.$new();`
+5. Create an element with  `angular.element` with the directive in it
+  * `var element = angular.element('<div><post-display post="post">{{ post.title }}</post-display></div>');`
+6. Compile the element and attach the new, localized scope to it
+  * `compiledDirective = compile(element)(scope);`
+7. Digest the scope
+  * `scope.$digest();`
+8. Try the following `it`
+```
+  it("should have put the title in bold", function(){
+    var el = compiledDirective.find('strong');
+    expect(el).toBeDefined();
+    expect(el.text()).toBe(scope.post.title);
+  });
 ```
 
 ## Move the `template` to a `templateUrl`
@@ -134,27 +160,7 @@ return {
 ## Test our directive
 *together*
 
-1. Initialize the current module
-  * `module('directings');`
-2. Inject in the `$compile` and `$rootScope` services
-  * `inject(function($compile, $rootScope){...`
-3. Attach `$compile` to a variable we can use outside of the `inject` scope
-4. Create a new localized scope from `$rootScope` and attach it to a variable outside the `inject` scope
-  * `scope = $rootScope.$new();`
-5. Create an element with  `angular.element` with the directive in it
-  * `var element = angular.element('<div><post-display post="post">{{ post.title }}</post-display></div>');`
-6. Compile the element and attach the new, localized scope to it
-  * `compiledDirective = compile(element)(scope);`
-7. Digest the scope
-  * `scope.$digest();`
-8. Try the following `it`
-```
-  it("should have put the title in bold", function(){
-    var el = compiledDirective.find('strong');
-    expect(el).toBeDefined();
-    expect(el.text()).toBe(scope.post.title);
-  });
-```
+1. Adjust our tests...
 
 ## Adding to Karma...
 *together*
