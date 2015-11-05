@@ -4,7 +4,7 @@ describe('post directive', function() {
   var compiledDirective;
 
   beforeEach(function() {
-    module('directings');
+    module('templates', 'directings');
 
     inject(function($compile, $rootScope) {
       compile = $compile;

@@ -5,6 +5,6 @@ angular.module('directings')
       title: '=title',
       username: '=' // shorthand for =username (when the key and is the same as the attribute)
     },
-    template: '<strong>{{ title }}</strong><br><tt>by {{ username }}</tt>'
+    templateUrl: 'templates/post.html'
   };
 });
