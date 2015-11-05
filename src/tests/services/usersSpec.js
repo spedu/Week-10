@@ -6,7 +6,7 @@ describe('users service', function(){
   });
 
   describe('get', function(){
-    it("should get some users", function(){
+    xit("should get some users", function(){
 
     });
   });

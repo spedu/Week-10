@@ -3,10 +3,10 @@ describe('post directive', function(){
     module('directings');
 
   });
-  it("should have put the title in bold", function(){
+  xit("should have put the title in bold", function(){
 
   });
-  it("should have prefixed the username with a 'by '", function(){
+  xit("should have prefixed the username with a 'by '", function(){
 
   });
 });

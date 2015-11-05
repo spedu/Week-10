@@ -7,19 +7,19 @@ describe('posts service', function(){
   });
 
   describe('get', function(){
-    it("should get some posts", function(){
+    xit("should get some posts", function(){
 
     });
-    it("should call users.get", function(){
+    xit("should call users.get", function(){
 
     });
-    it("should call posts.mapUsers", function(){
+    xit("should call posts.mapUsers", function(){
 
     });
   });
 
   describe("mapUsers", function(){
-    it("should add a userName to the posts", function(){
+    xit("should add a userName to the posts", function(){
 
     });
 
