@@ -1,10 +1,9 @@
 angular.module('directings')
-.directive('post', function() {
+.directive('postDisplay', function() {
   return {
     scope: {
-      title: '=title',
-      username: '=' // shorthand for =username (when the key and is the same as the attribute)
-    },
+      post: '='
+    },  
     templateUrl: 'templates/post.html'
   };
 });
