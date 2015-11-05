@@ -28,7 +28,7 @@ app.service('posts', ['$http', 'users', function($http, users){
       users.data.forEach(function(user) {
         svc.data.forEach(function(post) {
           if(user.id === post.userId) {
-            post.user = user;
+            post.username = user.username;
           }
         });
       });
