@@ -3,4 +3,8 @@ angular.module('directings')
     var lc = this;
     lc.posts = posts;
     posts.get();
+
+    this.display = function(post) {
+      posts.current = post;
+    };
   }]);

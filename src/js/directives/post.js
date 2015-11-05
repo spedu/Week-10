@@ -2,7 +2,8 @@ angular.module('directings')
 .directive('postDisplay', function() {
   return {
     scope: {
-      post: '='
+      post: '=',
+      body: '=body'
     },  
     templateUrl: 'templates/post.html'
   };

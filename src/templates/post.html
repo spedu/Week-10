@@ -1,3 +1,7 @@
-<strong>{{ post.title }}</strong><br>
-<tt>by {{ post.username }}</tt>
-Template!
+<div ng-if="post">
+  <strong>{{ post.title }}</strong><br>
+  <tt>by {{ post.username }}</tt>
+  <p ng-if="body">
+    {{ post.body }}
+  </p>  
+</div>
